@@ -75,8 +75,6 @@ const Quiz = () => {
     [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
   }, []);
 
-  [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
-
   return (
     <>
       <p>Answer me this, which of these TLDs is the real one?</p>
