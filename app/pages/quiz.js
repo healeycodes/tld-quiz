@@ -51,7 +51,7 @@ const Quiz = () => {
         setScore([newScore, newTotalScore]);
         setLastAnswer(
           <>
-            Yup, <code>.{real}</code> is a real TLD.{" "}
+            ✅ Yup, <code>.{real}</code> is a real TLD.{" "}
             {`So far, ${newScore}/${newTotalScore} correct.`}
           </>
         );
@@ -68,7 +68,7 @@ const Quiz = () => {
         setScore([score[0], newTotalScore]);
         setLastAnswer(
           <>
-            Nope, <code>.{fake}</code> is {kind}.{" "}
+            ⛔ Nope, <code>.{fake}</code> is {kind}.{" "}
             {`So far, ${score[0]}/${newTotalScore} correct.`}
           </>
         );
