@@ -9,6 +9,7 @@ export default function Home() {
         <title>TLD Quiz</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Water />
 
       <main>
         <h1 className="title">TLD Quiz</h1>
@@ -85,13 +86,6 @@ export default function Home() {
           @healeycodes
         </a>
       </footer>
-
-      <Water />
-      <style jsx>{`
-        * {
-          line-height: 2;
-        }
-      `}</style>
     </div>
   );
 }

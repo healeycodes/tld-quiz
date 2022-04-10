@@ -1,6 +1,12 @@
 const Water = () => {
   return (
-    <style jsx>{`
+    <style jsx global>{`
+      /* Extra styles go here */
+      * {
+        line-height: 2;
+      }
+      /* The rest is water.css */
+
       /**
     * Automatic version:
     * Uses light theme by default but switches to dark theme
