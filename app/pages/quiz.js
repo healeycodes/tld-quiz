@@ -73,7 +73,7 @@ const Quiz = () => {
 
   useEffect(() => {
     [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
-  });
+  }, []);
 
   [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
 
