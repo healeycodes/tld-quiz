@@ -68,12 +68,13 @@ const Quiz = () => {
     </button>
   );
 
-  let questionOne;
-  let questionTwo;
+  let questionOne = null;
+  let questionTwo = null;
 
-  useEffect(() => {
+  // TODO: Can someone tell me how to only render this client-side please
+  if (typeof window !== "undefined") {
     [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
-  }, []);
+  }
 
   return (
     <>
