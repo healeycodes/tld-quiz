@@ -68,16 +68,20 @@ const Quiz = () => {
     </button>
   );
 
-  const [questionOne, questionTwo] = shuffleArray([
-    correctAnswer,
-    incorrectAnswer,
-  ]);
+  let questionOne;
+  let questionTwo;
+
+  useEffect(() => {
+    [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
+  });
+
+  [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
 
   return (
     <>
       <p>Answer me this, which of these TLDs is the real one?</p>
-      {questionOne}
-      {questionTwo}
+      {questionOne ? questionOne : <br />}
+      {questionTwo ? questionTwo : <br />}
       <p>{lastAnswer ? lastAnswer : <br />}</p>
     </>
   );
