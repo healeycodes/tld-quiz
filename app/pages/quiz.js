@@ -60,6 +60,7 @@ const Quiz = () => {
       .{real}
     </button>
   );
+
   const incorrectAnswer = (
     <button
       onClick={() => {
@@ -81,7 +82,7 @@ const Quiz = () => {
     const questions = shuffleArray([correctAnswer, incorrectAnswer]);
     setQuestionOne(questions[0]);
     setQuestionTwo(questions[1]);
-  }, []);
+  }, [score]);
 
   return (
     <>
