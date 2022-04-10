@@ -7,6 +7,12 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>TLD Quiz</title>
+        <meta
+          name="description"
+          content="How well do you know your top-level domains (TLDs)?"
+        ></meta>
+        <meta name="author" content="Andrew Healey" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Water />
