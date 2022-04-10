@@ -19,7 +19,16 @@ const fakeCommonTLD = () =>
     Math.floor(Math.random() * TLDs.fake_common_tlds.length)
   ];
 
+const emptyStateForSpacing = (
+  // TODO: Is this the best a11y behavior?
+  <button aria-hidden="true" style={{ visibility: "hidden" }}>
+    .
+  </button>
+);
+
 const Quiz = () => {
+  const [questionOne, setQuestionOne] = useState(emptyStateForSpacing);
+  const [questionTwo, setQuestionTwo] = useState(emptyStateForSpacing);
   const [score, setScore] = useState([0, 0]);
   const [lastAnswer, setLastAnswer] = useState(null);
 
@@ -68,22 +77,17 @@ const Quiz = () => {
     </button>
   );
 
-  const [questionOne, questionTwo] = shuffleArray([
-    correctAnswer,
-    incorrectAnswer,
-  ]);
+  useEffect(() => {
+    const questions = shuffleArray([correctAnswer, incorrectAnswer]);
+    setQuestionOne(questions[0]);
+    setQuestionTwo(questions[1]);
+  }, []);
 
-  const emptyStateForSpacing = (
-    // TODO: Is this the best a11y behavior?
-    <button aria-hidden="true" style={{ visibility: "hidden" }}>
-      .
-    </button>
-  );
   return (
     <>
       <p>Answer me this, which of these TLDs is the real one?</p>
-      {typeof window ? questionOne : emptyStateForSpacing}
-      {typeof window ? questionTwo : emptyStateForSpacing}
+      {questionOne}
+      {questionTwo}
       <p>{lastAnswer ? lastAnswer : <br />}</p>
     </>
   );
