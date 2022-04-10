@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TLDs from "../data/tlds.json";
 
 // https://stackoverflow.com/a/12646864
@@ -68,13 +68,10 @@ const Quiz = () => {
     </button>
   );
 
-  let questionOne = null;
-  let questionTwo = null;
-
-  // TODO: Can someone tell me how to only render this client-side please
-  if (typeof window !== "undefined") {
-    [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
-  }
+  const [questionOne, questionTwo] = shuffleArray([
+    correctAnswer,
+    incorrectAnswer,
+  ]);
 
   const emptyStateForSpacing = (
     // TODO: Is this the best a11y behavior?
@@ -85,8 +82,8 @@ const Quiz = () => {
   return (
     <>
       <p>Answer me this, which of these TLDs is the real one?</p>
-      {questionOne ? questionOne : emptyStateForSpacing}
-      {questionTwo ? questionTwo : emptyStateForSpacing}
+      {typeof window ? questionOne : emptyStateForSpacing}
+      {typeof window ? questionTwo : emptyStateForSpacing}
       <p>{lastAnswer ? lastAnswer : <br />}</p>
     </>
   );
