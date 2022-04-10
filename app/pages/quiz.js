@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TLDs from "../data/tlds.json";
 
 // https://stackoverflow.com/a/12646864
@@ -76,11 +76,17 @@ const Quiz = () => {
     [questionOne, questionTwo] = shuffleArray([correctAnswer, incorrectAnswer]);
   }
 
+  const emptyStateForSpacing = (
+    // TODO: Is this the best a11y behavior?
+    <button aria-hidden="true" style={{ visibility: "hidden" }}>
+      .
+    </button>
+  );
   return (
     <>
       <p>Answer me this, which of these TLDs is the real one?</p>
-      {questionOne ? questionOne : <br />}
-      {questionTwo ? questionTwo : <br />}
+      {questionOne ? questionOne : emptyStateForSpacing}
+      {questionTwo ? questionTwo : emptyStateForSpacing}
       <p>{lastAnswer ? lastAnswer : <br />}</p>
     </>
   );
