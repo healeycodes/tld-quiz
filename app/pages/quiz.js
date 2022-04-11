@@ -45,6 +45,7 @@ const Quiz = () => {
 
   const correctAnswer = (
     <button
+      key={real}
       onClick={() => {
         const newScore = score[0] + 1;
         const newTotalScore = score[1] + 1;
@@ -63,6 +64,7 @@ const Quiz = () => {
 
   const incorrectAnswer = (
     <button
+      key={fake}
       onClick={() => {
         const newTotalScore = score[1] + 1;
         setScore([score[0], newTotalScore]);
