@@ -1594,6 +1594,13 @@ const Water = () => {
           text-decoration: underline;
         }
       }
+
+      /* Fix sticky hover states on mobile */
+      @media (hover: none) {
+        button:hover {
+          background: var(--button-base);
+        }
+      }
     `}</style>
   );
 };

@@ -84,9 +84,6 @@ const Quiz = () => {
     const questions = shuffleArray([correctAnswer, incorrectAnswer]);
     setQuestionOne(questions[0]);
     setQuestionTwo(questions[1]);
-
-    // Fix buttons staying hovered on mobile
-    document.activeElement.blur();
   }, [score]);
 
   return (
