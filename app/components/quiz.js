@@ -19,6 +19,7 @@ const fakeCommonTLD = () =>
     Math.floor(Math.random() * TLDs.fake_common_tlds.length)
   ];
 
+// Use this to stop content layout shift (bit hacky)
 const emptyStateForSpacing = (
   // TODO: Is this the best a11y behavior?
   <button aria-hidden="true" style={{ visibility: "hidden" }}>

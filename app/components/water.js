@@ -5,7 +5,7 @@ const Water = () => {
       * {
         line-height: 2;
       }
-      /* The rest is water.css */
+      /* Then water.css, then some fixes at the very end */
 
       /**
     * Automatic version:

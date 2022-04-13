@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Quiz from "./quiz";
-import Water from "./water";
+import Quiz from "../components/quiz";
+import Water from "../components/water";
 
 export default function Home() {
   return (
